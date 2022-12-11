@@ -143,7 +143,8 @@ addDept = () => {
       },
     ])
     .then((answer) => {
-      const sql = `INSERT INTO department (name) VALUES (?)`;
+      const sql = `INSERT INTO department (name)
+      VALUES (?)`;
       connection.query(sql, answer.addDept, (err, result) => {
         if (err) throw err;
         console.log("Added " + answer.addDept + " to departments!");
